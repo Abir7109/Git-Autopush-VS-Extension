@@ -1,100 +1,138 @@
-<div align="center">
-  <img src="images/icon.png" alt="Git AutoPilot Logo" width="128" height="128">
-  <h1>Git AutoPilot</h1>
-  <p>Push your workspace to GitHub with a single click — straight from the VS Code status bar.</p>
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/Abir7109/Git-Autopilot-VS-Extension/master/images/icon.png" alt="Git AutoPilot" width="80" height="80" />
+  <br>
+  Git AutoPilot
+</h1>
 
-  [![VS Marketplace](https://img.shields.io/visual-studio-marketplace/v/rmabir71.git-autopilot?style=for-the-badge&label=VS%20Marketplace&color=0078d4)](https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopilot)
-  [![Downloads](https://img.shields.io/visual-studio-marketplace/d/rmabir71.git-autopilot?style=for-the-badge&color=0078d4)](https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopilot)
-  [![Rating](https://img.shields.io/visual-studio-marketplace/r/rmabir71.git-autopilot?style=for-the-badge&color=0078d4)](https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopilot)
-  [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE.md)
+<p align="center">
+  <strong>Stop wasting time on repetitive Git commands.</strong><br>
+  Stage, commit & push your entire workspace to GitHub — <em>in one click.</em>
+</p>
 
-</div>
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopilot">
+    <img src="https://img.shields.io/visual-studio-marketplace/v/rmabir71.git-autopilot?style=flat-square&label=Version&color=blue" alt="Version" />
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopilot">
+    <img src="https://img.shields.io/visual-studio-marketplace/i/rmabir71.git-autopilot?style=flat-square&label=Installs&color=brightgreen" alt="Installs" />
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopilot">
+    <img src="https://img.shields.io/visual-studio-marketplace/r/rmabir71.git-autopilot?style=flat-square&label=Rating&color=orange" alt="Rating" />
+  </a>
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License" />
+</p>
 
 ---
 
-## Why Git AutoPilot?
+### The Problem
 
-Tired of the repetitive **add → commit → push** cycle? Git AutoPilot automates your entire Git workflow into a **single click** from the VS Code status bar. Whether you're prototyping, saving progress, or deploying — it handles the boilerplate so you can focus on writing code.
+Every time you make a change, you run the same commands:
+
+```bash
+git add .
+git commit -m "..."
+git push
+```
+
+Over and over. **50+ times a day.** That's time you'll never get back.
+
+### The Solution
+
+**One button. One click. Done.**
+
+Git AutoPilot adds a sleek **Auto-Push** button to your VS Code status bar. Click it, and your code is staged, committed, and pushed to GitHub — automatically.
 
 ---
 
-## Features
+## What You Get
 
-| Feature | Description |
-|---------|-------------|
-| **One-Click Push** | A status bar button that stages, commits, and pushes in one action |
-| **Auto-Init** | Automatically initializes a Git repository if the workspace isn't one yet |
-| **Remote Setup** | Prompts for a GitHub URL if no `origin` remote is configured |
-| **Configurable Messages** | Use a custom commit message template with `${date}` for ISO timestamps |
-| **Zero Configuration** | Works out of the box — no setup required |
+<table>
+<tr>
+<td width="50%">
+
+**One-Click Push**
+A single status bar button handles `git add` → `git commit` → `git push` in one seamless action.
+
+</td>
+<td width="50%">
+
+**Auto Repository Setup**
+Not a Git repo yet? No remote configured? Git AutoPilot handles it for you — just click.
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+**Smart Commit Messages**
+Fully customizable commit message templates with `${date}` timestamp support.
+
+</td>
+<td width="50%">
+
+**Zero Configuration**
+Install and go. No setup wizards, no config files, no headaches.
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## How It Works
 
 ```
-  Click "Auto-Push"
-        │
-        ▼
-  ┌─────────────┐
-  │  git init    │  (if not a repo)
-  └──────┬──────┘
-         ▼
-  ┌─────────────┐
-  │ git remote   │  (prompt if no origin)
-  └──────┬──────┘
-         ▼
-  ┌─────────────┐
-  │  git add .   │  (stage all changes)
-  └──────┬──────┘
-         ▼
-  ┌─────────────┐
-  │ git commit   │  (with custom template)
-  └──────┬──────┘
-         ▼
-  ┌─────────────┐
-  │  git push    │  (push to origin)
-  └─────────────┘
+    ┌──────────────────────────────────────────┐
+    │                                          │
+    │   ☁️  Click "Auto-Push" in status bar    │
+    │                  │                        │
+    │                  ▼                        │
+    │   ┌──────────────────────────┐           │
+    │   │  git init (if needed)    │           │
+    │   └───────────┬──────────────┘           │
+    │               ▼                          │
+    │   ┌──────────────────────────┐           │
+    │   │  Setup remote (if needed)│           │
+    │   └───────────┬──────────────┘           │
+    │               ▼                          │
+    │   ┌──────────────────────────┐           │
+    │   │  git add . (stage all)   │           │
+    │   └───────────┬──────────────┘           │
+    │               ▼                          │
+    │   ┌──────────────────────────┐           │
+    │   │  git commit (auto msg)   │           │
+    │   └───────────┬──────────────┘           │
+    │               ▼                          │
+    │   ┌──────────────────────────┐           │
+    │   │  git push → GitHub       │           │
+    │   └──────────────────────────┘           │
+    │                                          │
+    │          ✅ Done! Code is live.           │
+    └──────────────────────────────────────────┘
 ```
 
 ---
 
-## Installation
+## Quick Start
 
-### From VS Code Marketplace
+1. **Install** this extension from the VS Code Marketplace
+2. **Open** any folder or project in VS Code
+3. **Click** the `☁️ Auto-Push` button in the bottom-left status bar
+4. **Done** — your code is on GitHub
 
-1. Open **VS Code**
-2. Go to **Extensions** (`Ctrl+Shift+X`)
-3. Search for **Git AutoPilot**
-4. Click **Install**
-
-### From VSIX File
-
-1. Download the `.vsix` file from the [Releases](https://github.com/Abir7109/git-autopilot/releases) page
-2. Open **VS Code**
-3. Go to **Extensions** → `...` menu → **Install from VSIX...**
-4. Select the downloaded `.vsix` file
+> On first use, you may be prompted for your GitHub repository URL.
 
 ---
 
-## Usage
+## Customize Your Commits
 
-1. Open a folder in VS Code
-2. Click the **$(cloud-upload) Auto-Push** button in the status bar (bottom-left)
-3. Alternatively, open the Command Palette (`Ctrl+Shift+P`) and run **Git AutoPilot: Push Workspace**
-4. On the first run, you may be prompted for your GitHub repository URL
+Open **Settings** (`Ctrl + ,`) and search for **Git AutoPilot**:
 
----
+| Setting | Default | Description |
+|---------|---------|-------------|
+| `gitAutopilot.commitMessageTemplate` | `Auto-commit ${date}` | Custom commit message template. Use `${date}` for ISO timestamp. |
 
-## Configuration
-
-Open **Settings** (`Ctrl+,`) → search for **Git AutoPilot**:
-
-| Setting | Type | Default | Description |
-|---------|------|---------|-------------|
-| `gitAutopilot.commitMessageTemplate` | `string` | `"Auto-commit ${date}"` | Template for the auto-commit message. Use `${date}` to insert an ISO timestamp. |
-
-### Example
+**Example:**
 
 ```json
 {
@@ -102,57 +140,38 @@ Open **Settings** (`Ctrl+,`) → search for **Git AutoPilot**:
 }
 ```
 
+**Output:**
+
+```
+chore: auto-save 2026-03-29T05:44:27.000Z
+```
+
 ---
 
 ## Requirements
 
-- **Git** must be installed and available in your system `PATH`
-- **VS Code** `1.80.0` or higher
+- **VS Code** 1.80.0 or higher
+- **Git** installed and available in your system `PATH`
 
 ---
 
-## Development
+## Support & Feedback
 
-```bash
-# Clone the repository
-git clone https://github.com/Abir7109/git-autopilot.git
-cd git-autopilot
+Found a bug? Have a feature request?
 
-# Install dependencies
-npm install
-
-# Compile TypeScript
-npm run compile
-
-# Watch for changes during development
-npm run watch
-
-# Package the extension
-npm run package
-```
-
-Press `F5` in VS Code to launch the Extension Development Host for testing.
+- **Issues:** [GitHub Issues](https://github.com/Abir7109/Git-Autopilot-VS-Extension/issues)
+- **Star the repo:** [GitHub](https://github.com/Abir7109/Git-Autopilot-VS-Extension)
 
 ---
 
-## Contributing
+<p align="center">
+  <strong>Made with TypeScript</strong> — Built for developers who value their time.
+</p>
 
-Contributions are welcome! Feel free to open an issue or submit a pull request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## License
-
-[MIT](LICENSE.md) &copy; 2026 [Abir](https://github.com/Abir7109)
-
----
-
-<div align="center">
-  <sub>Built with TypeScript for VS Code</sub>
-</div>
+<p align="center">
+  <a href="https://github.com/Abir7109/Git-Autopilot-VS-Extension">⭐ Star on GitHub</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopilot">📦 VS Marketplace</a>
+  &nbsp;&bull;&nbsp;
+  <a href="https://github.com/Abir7109/Git-Autopilot-VS-Extension/blob/master/LICENSE.md">📄 MIT License</a>
+</p>
