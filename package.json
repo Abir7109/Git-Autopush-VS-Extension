@@ -1,0 +1,68 @@
+{
+  "name": "git-autopilot",
+  "displayName": "Git AutoPilot",
+  "description": "Push the current workspace to a connected GitHub repo with a single click.",
+  "version": "0.0.1",
+  "publisher": "rmabir71",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "SCM Providers"
+  ],
+  "activationEvents": [
+    "onCommand:git-autopilot.push",
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "icon": "images/icon.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "git-autopilot.push",
+        "title": "Git AutoPilot: Push Workspace"
+      }
+    ],
+    "configuration": {
+      "properties": {
+        "gitAutopilot.commitMessageTemplate": {
+          "type": "string",
+          "default": "Auto‑commit ${date}",
+          "description": "Template for the auto‑commit message. Use ${date} for ISO timestamp."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "@vscode/vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^5.3.0",
+    "@vscode/vsce": "^2.22.0"
+  },
+  "keywords": [
+    "git",
+    "github",
+    "push",
+    "source control",
+    "scm",
+    "automation",
+    "one-click"
+  ],
+  "author": "Abir <rahikulmakhtum147@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abir7109/git-autopilot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Abir7109/git-autopilot/issues"
+  },
+  "homepage": "https://github.com/Abir7109/git-autopilot#readme",
+  "license": "MIT"
+
+}
