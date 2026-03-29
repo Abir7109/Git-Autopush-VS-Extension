@@ -169,10 +169,6 @@ Found a bug? Have a feature request?
 </p>
 
 <p align="center">
-  <sub>Last updated: 2026-03-29 — Auto-push test</sub>
-</p>
-
-<p align="center">
   <a href="https://github.com/Abir7109/Git-Autopush-VS-Extension">⭐ Star on GitHub</a>
   &nbsp;&bull;&nbsp;
   <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopush">📦 VS Marketplace</a>
