@@ -1,8 +1,8 @@
 {
-  "name": "git-autopilot",
-  "displayName": "Git AutoPilot",
+  "name": "git-autopush",
+  "displayName": "Git Autopush",
   "description": "Push the current workspace to a connected GitHub repo with a single click.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "rmabir71",
   "engines": {
     "vscode": "^1.80.0"
@@ -11,7 +11,7 @@
     "SCM Providers"
   ],
   "activationEvents": [
-    "onCommand:git-autopilot.push",
+    "onCommand:git-autopush.push",
     "onStartupFinished"
   ],
   "main": "./out/extension.js",
@@ -19,13 +19,13 @@
   "contributes": {
     "commands": [
       {
-        "command": "git-autopilot.push",
-        "title": "Git AutoPilot: Push Workspace"
+        "command": "git-autopush.push",
+        "title": "Git Autopush: Push Workspace"
       }
     ],
     "configuration": {
       "properties": {
-        "gitAutopilot.commitMessageTemplate": {
+        "gitAutopush.commitMessageTemplate": {
           "type": "string",
           "default": "Auto‑commit ${date}",
           "description": "Template for the auto‑commit message. Use ${date} for ISO timestamp."
@@ -57,12 +57,12 @@
   "author": "Abir <rahikulmakhtum147@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Abir7109/git-autopilot.git"
+    "url": "git+https://github.com/Abir7109/git-autopush.git"
   },
   "bugs": {
-    "url": "https://github.com/Abir7109/git-autopilot/issues"
+    "url": "https://github.com/Abir7109/git-autopush/issues"
   },
-  "homepage": "https://github.com/Abir7109/git-autopilot#readme",
+  "homepage": "https://github.com/Abir7109/git-autopush#readme",
   "license": "MIT"
 
 }

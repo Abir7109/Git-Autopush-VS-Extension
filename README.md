@@ -1,7 +1,7 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/Abir7109/Git-Autopilot-VS-Extension/master/images/icon.png" alt="Git AutoPilot" width="80" height="80" />
+  <img src="https://raw.githubusercontent.com/Abir7109/Git-Autopush-VS-Extension/master/images/icon.png" alt="Git Autopush" width="80" height="80" />
   <br>
-  Git AutoPilot
+  Git Autopush
 </h1>
 
 <p align="center">
@@ -10,14 +10,14 @@
 </p>
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopilot">
-    <img src="https://img.shields.io/visual-studio-marketplace/v/rmabir71.git-autopilot?style=flat-square&label=Version&color=blue" alt="Version" />
+  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopush">
+    <img src="https://img.shields.io/visual-studio-marketplace/v/rmabir71.git-autopush?style=flat-square&label=Version&color=blue" alt="Version" />
   </a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopilot">
-    <img src="https://img.shields.io/visual-studio-marketplace/i/rmabir71.git-autopilot?style=flat-square&label=Installs&color=brightgreen" alt="Installs" />
+  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopush">
+    <img src="https://img.shields.io/visual-studio-marketplace/i/rmabir71.git-autopush?style=flat-square&label=Installs&color=brightgreen" alt="Installs" />
   </a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopilot">
-    <img src="https://img.shields.io/visual-studio-marketplace/r/rmabir71.git-autopilot?style=flat-square&label=Rating&color=orange" alt="Rating" />
+  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopush">
+    <img src="https://img.shields.io/visual-studio-marketplace/r/rmabir71.git-autopush?style=flat-square&label=Rating&color=orange" alt="Rating" />
   </a>
   <img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="License" />
 </p>
@@ -40,7 +40,7 @@ Over and over. **50+ times a day.** That's time you'll never get back.
 
 **One button. One click. Done.**
 
-Git AutoPilot adds a sleek **Auto-Push** button to your VS Code status bar. Click it, and your code is staged, committed, and pushed to GitHub — automatically.
+Git Autopush adds a sleek **Auto-Push** button to your VS Code status bar. Click it, and your code is staged, committed, and pushed to GitHub — automatically.
 
 ---
 
@@ -57,7 +57,7 @@ A single status bar button handles `git add` → `git commit` → `git push` in 
 <td width="50%">
 
 **Auto Repository Setup**
-Not a Git repo yet? No remote configured? Git AutoPilot handles it for you — just click.
+Not a Git repo yet? No remote configured? Git Autopush handles it for you — just click.
 
 </td>
 </tr>
@@ -126,17 +126,17 @@ Install and go. No setup wizards, no config files, no headaches.
 
 ## Customize Your Commits
 
-Open **Settings** (`Ctrl + ,`) and search for **Git AutoPilot**:
+Open **Settings** (`Ctrl + ,`) and search for **Git Autopush**:
 
 | Setting | Default | Description |
 |---------|---------|-------------|
-| `gitAutopilot.commitMessageTemplate` | `Auto-commit ${date}` | Custom commit message template. Use `${date}` for ISO timestamp. |
+| `gitAutopush.commitMessageTemplate` | `Auto-commit ${date}` | Custom commit message template. Use `${date}` for ISO timestamp. |
 
 **Example:**
 
 ```json
 {
-  "gitAutopilot.commitMessageTemplate": "chore: auto-save ${date}"
+  "gitAutopush.commitMessageTemplate": "chore: auto-save ${date}"
 }
 ```
 
@@ -159,8 +159,8 @@ chore: auto-save 2026-03-29T05:44:27.000Z
 
 Found a bug? Have a feature request?
 
-- **Issues:** [GitHub Issues](https://github.com/Abir7109/Git-Autopilot-VS-Extension/issues)
-- **Star the repo:** [GitHub](https://github.com/Abir7109/Git-Autopilot-VS-Extension)
+- **Issues:** [GitHub Issues](https://github.com/Abir7109/Git-Autopush-VS-Extension/issues)
+- **Star the repo:** [GitHub](https://github.com/Abir7109/Git-Autopush-VS-Extension)
 
 ---
 
@@ -169,9 +169,9 @@ Found a bug? Have a feature request?
 </p>
 
 <p align="center">
-  <a href="https://github.com/Abir7109/Git-Autopilot-VS-Extension">⭐ Star on GitHub</a>
+  <a href="https://github.com/Abir7109/Git-Autopush-VS-Extension">⭐ Star on GitHub</a>
   &nbsp;&bull;&nbsp;
-  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopilot">📦 VS Marketplace</a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=rmabir71.git-autopush">📦 VS Marketplace</a>
   &nbsp;&bull;&nbsp;
-  <a href="https://github.com/Abir7109/Git-Autopilot-VS-Extension/blob/master/LICENSE.md">📄 MIT License</a>
+  <a href="https://github.com/Abir7109/Git-Autopush-VS-Extension/blob/master/LICENSE.md">📄 MIT License</a>
 </p>

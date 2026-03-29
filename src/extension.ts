@@ -9,7 +9,8 @@ function runGitCommand(command: string, cwd: string): Promise<string> {
   return new Promise((resolve, reject) => {
     exec(command, { cwd }, (error, stdout, stderr) => {
       if (error) {
-        reject(stderr || error.message);
+        const details = [stderr, error.message].filter(Boolean).join('\n');
+        reject(details);
       } else {
         resolve(stdout.trim());
       }
@@ -56,7 +57,7 @@ async function ensureRepo(workspacePath: string): Promise<void> {
 async function pushWorkspace(): Promise<void> {
   const workspaceFolders = vscode.workspace.workspaceFolders;
   if (!workspaceFolders) {
-    vscode.window.showErrorMessage('Open a folder before using Git AutoPilot.');
+    vscode.window.showErrorMessage('Open a folder before using Git Autopush.');
     return;
   }
   const workspacePath = workspaceFolders[0].uri.fsPath;
@@ -65,6 +66,34 @@ async function pushWorkspace(): Promise<void> {
   } catch (e) {
     vscode.window.showErrorMessage(`Repo setup failed: ${e}`);
     return;
+  }
+
+  // Ensure git user identity is configured
+  try {
+    await runGitCommand('git config user.name', workspacePath);
+  } catch {
+    const setName = await vscode.window.showInputBox({
+      prompt: 'Git user.name is not configured. Enter your name for commits.',
+      ignoreFocusOut: true,
+    });
+    if (!setName) {
+      vscode.window.showErrorMessage('git config user.name is required for commits.');
+      return;
+    }
+    await runGitCommand(`git config user.name "${setName}"`, workspacePath);
+  }
+  try {
+    await runGitCommand('git config user.email', workspacePath);
+  } catch {
+    const setEmail = await vscode.window.showInputBox({
+      prompt: 'Git user.email is not configured. Enter your email for commits.',
+      ignoreFocusOut: true,
+    });
+    if (!setEmail) {
+      vscode.window.showErrorMessage('git config user.email is required for commits.');
+      return;
+    }
+    await runGitCommand(`git config user.email "${setEmail}"`, workspacePath);
   }
 
   // Stage all changes
@@ -76,7 +105,7 @@ async function pushWorkspace(): Promise<void> {
   }
 
   // Build commit message from config
-  const cfg = vscode.workspace.getConfiguration('gitAutopilot');
+  const cfg = vscode.workspace.getConfiguration('gitAutopush');
   const template = cfg.get<string>('commitMessageTemplate') || 'Auto-commit ${date}';
   const message = template.replace('${date}', new Date().toISOString());
 
@@ -105,11 +134,11 @@ export function activate(context: vscode.ExtensionContext) {
   // Status‑bar button
   const btn = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
   btn.text = '$(cloud-upload) Auto‑Push';
-  btn.command = 'git-autopilot.push';
+  btn.command = 'git-autopush.push';
   btn.tooltip = 'Push current workspace to GitHub';
   btn.show();
 
-  const disposable = vscode.commands.registerCommand('git-autopilot.push', pushWorkspace);
+  const disposable = vscode.commands.registerCommand('git-autopush.push', pushWorkspace);
   context.subscriptions.push(btn, disposable);
 }
 
